@@ -4,9 +4,9 @@
 
 {% block content %}
 
-<div class="bg-dark text-light clearfix"> 
+<!-- <div class="bg-dark text-light clearfix">
     <div class="float-md-right">
-        <h2>Aker Rossen</h2>
+        <h2>{{char.first_name}} {{char.last_name}}</h2>
         <span class="font-weight-bold">Play By: </span><span>Matt Ryan</span><br />
         <span class="font-weight-bold">Species: </span><span>Meta-Human</span><br />
         <span class="font-weight-bold">Birthdate: </span><span>February 19, 1987</span><br />
@@ -14,20 +14,17 @@
 
     </div>
     <div class="float-md-left card card-inverse text-center">
-        <img class="img-fluid float-left"
-              src="images/matt-ryan.jpg"
-              style="max-height: 300px"
-            />
+        <img class="img-fluid float-left" src="images/matt-ryan.jpg" style="max-height: 300px" />
     </div>
+</div> -->
+
+
+<div>
+    {% for char in characters %}
+    <h2>{{char.first_name}} {{char.last_name}}</h2>
+    <span class="font-weight-bold">Play By: </span><span></span><br />
+    <p>{{char.bio_text|linebreaksbr}}</p>
+    {% endfor %}
 </div>
-
-
-        <!-- <div>
-            {% for char in characters %}
-                <h2>{{char.first_name}} {{char.last_name}}</h2>
-                <span class="font-weight-bold">Play By: </span><span>Matt Ryan</span><br />
-                <p>{{char.bio_text|linebreaksbr}}</p>
-            {% endfor %}
-        </div> -->
 
 {% endblock %}
